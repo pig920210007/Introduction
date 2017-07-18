@@ -1,6 +1,6 @@
 <?php
 
-class Home extends CI_Controller {
+class Introduction extends CI_Controller {
 
 function __construct()
  {
@@ -8,7 +8,7 @@ function __construct()
   $this->lang->load('introduction', 'zh-tw');
  }
 
-function index() {
+function title() {
 	$data['index'] = $this->lang->line('index');
 	$data['introduction'] = $this->lang->line('introduction');
 	$data['works'] = $this->lang->line('works');
@@ -38,9 +38,10 @@ function index() {
 	$data['workproject_title1'] = $this->lang->line('workproject_title1');
 	$data['workproject_title2'] = $this->lang->line('workproject_title2');
 	$this->load->view('templates/header', $data);
-    $this->load->view('home_view', $data);
+    $this->load->view('works/title', $data);
    	$this->load->view('templates/footer', $data);
 
 }
 
+  
 }

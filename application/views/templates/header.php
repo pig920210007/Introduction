@@ -32,8 +32,8 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $introduction ?> <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="<?php echo base_url(); ?>introduction/title"><?php echo $introduction_title ?></a></li>
-            <li><a href="#"><?php echo $introduction_works ?></a></li>
-            <li><a href="#"><?php echo $introduction_license ?></a></li>
+            <li><a href="<?php echo base_url(); ?>introduction/works"><?php echo $introduction_works ?></a></li>
+            <li><a href="<?php echo base_url(); ?>introduction/license"><?php echo $introduction_license ?></a></li>
            
           </ul>
         </li>
@@ -41,9 +41,10 @@
       <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $works ?> <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#"><?php echo $works_title ?></a></li>
-            <li><a href="#"><?php echo $works_title1 ?></a></li>
-            <li><a href="#"><?php echo $works_title2 ?></a></li>
+
+          <?php foreach($works_titles as $works_title) : ?>
+            <li><a href="<?php echo site_url('/works/title/' . $works_title['id']); ?>"><?php echo $works_title['name']; ?></a></li>
+            <?php endforeach; ?>
            
           </ul>
         </li>
