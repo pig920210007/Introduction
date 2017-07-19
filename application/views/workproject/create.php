@@ -1,9 +1,9 @@
 <?php echo validation_errors(); ?>
 
-<?php echo form_open_multipart('/works/create'); ?>
+<?php echo form_open_multipart('/workproject/create'); ?>
 
   <fieldset>
-    <legend>新增作品資訊</legend>
+    <legend>新增工作項目</legend>
     <div class="form-group">
       <label class="col-lg-2 control-label">Name</label>
       <div class="col-lg-10">
@@ -13,9 +13,9 @@
 
     <br>
     <div class="form-group">
-      <label for="inputPassword" class="col-lg-2 control-label">address</label>
+      <label for="inputPassword" class="col-lg-2 control-label">worktime</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" name="address" placeholder="Address">
+        <input type="text" class="form-control" name="worktime" placeholder="年資">
        </div>
     </div>
     <div class="form-group">
@@ -25,14 +25,7 @@
         </div>
     </div>
       <br>
-    <div class="form-group">
-      <label class="col-lg-2 control-label">上傳圖片</label>
-      <div class="col-lg-10">
-        
-        <input type="file" name="userfile" size="20">
-       
-      </div>
-    </div>
+   
    
     <div class="form-group">
       <div class="col-lg-10 col-lg-offset-2">        
@@ -41,4 +34,3 @@
     </div>
   </fieldset>
 </form>
-

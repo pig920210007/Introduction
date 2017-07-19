@@ -9,6 +9,7 @@ function __construct()
  }
 
 function index() {
+	
 	$data['index'] = $this->lang->line('index');
 	$data['introduction'] = $this->lang->line('introduction');
 	$data['works'] = $this->lang->line('works');
@@ -33,6 +34,7 @@ function index() {
 	//$data['works_title'] = $this->lang->line('works_title');
 	//$data['works_title1'] = $this->lang->line('works_title1');
 	//$data['works_title2'] = $this->lang->line('works_title2');
+	$data['workproject_titles'] = $this->workproject_model->get_workproject();
 	 $data['works_titles'] = $this->works_model->get_works();
 	$data['workproject_title'] = $this->lang->line('workproject_title');
 	$data['workproject_title1'] = $this->lang->line('workproject_title1');

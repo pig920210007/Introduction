@@ -1,9 +1,9 @@
 <?php echo validation_errors(); ?>
 
-<?php echo form_open_multipart('/works/update'); ?>
+<?php echo form_open_multipart('/workproject/update'); ?>
 
   <fieldset>
-    <legend>修改作品資訊</legend>
+    <legend>修改工作項目</legend>
     <div class="form-group">
       <label class="col-lg-2 control-label">Name</label>
       <div class="col-lg-10">
@@ -13,9 +13,9 @@
 <input type="hidden"  name="id"  value="<?php echo $post->id ?>">
     <br>
     <div class="form-group">
-      <label for="inputPassword" class="col-lg-2 control-label">address</label>
+      <label for="inputPassword" class="col-lg-2 control-label">worktime</label>
       <div class="col-lg-10">
-        <input type="text" class="form-control" name="address" placeholder="Address" value="<?php echo $post->address ?>">
+        <input type="text" class="form-control" name="worktime" placeholder="年資" value="<?php echo $post->worktime ?>">
        </div>
     </div>
     <div class="form-group">
@@ -25,16 +25,7 @@
         </div>
     </div>
       <br>
-    <!--<div class="form-group">
-      <label class="col-lg-2 control-label">上傳圖片</label>
-      <div class="col-lg-10">
-        
-        <input type="file" name="userfile" size="20">
-       
-      </div>
-
-    </div>
-   -->
+    
     <div class="form-group">
       <div class="col-lg-10 col-lg-offset-2">        
         <button type="submit" class="btn btn-primary">Submit</button>

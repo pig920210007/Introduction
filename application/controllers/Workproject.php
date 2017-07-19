@@ -1,6 +1,6 @@
 <?php
 
-class Works extends CI_Controller {
+class Workproject extends CI_Controller {
 
 function __construct()
  {
@@ -33,16 +33,16 @@ public function title($id) {
 	//$data['works_title'] = $this->lang->line('works_title');
 	//$data['works_title1'] = $this->lang->line('works_title1');
 	//$data['works_title2'] = $this->lang->line('works_title2');
-	$data['workproject_titles'] = $this->workproject_model->get_workproject();
 	 $data['works_titles'] = $this->works_model->get_works();
+	 $data['workproject_titles'] = $this->workproject_model->get_workproject();
 	$data['workproject_title'] = $this->lang->line('workproject_title');
 	$data['workproject_title1'] = $this->lang->line('workproject_title1');
 	$data['workproject_title2'] = $this->lang->line('workproject_title2');
 
-	$data['post'] = $this->works_model->get_title($id);
+	$data['post'] = $this->workproject_model->get_title($id);
 
 	$this->load->view('templates/header', $data);
-    $this->load->view('works/title', $data);
+    $this->load->view('workproject/title', $data);
    	$this->load->view('templates/footer', $data);
 
 }
@@ -71,46 +71,29 @@ public function create() {
 	//$data['works_title'] = $this->lang->line('works_title');
 	//$data['works_title1'] = $this->lang->line('works_title1');
 	//$data['works_title2'] = $this->lang->line('works_title2');
-	$data['workproject_titles'] = $this->workproject_model->get_workproject();
 	 $data['works_titles'] = $this->works_model->get_works();
+	 $data['workproject_titles'] = $this->workproject_model->get_workproject();
 	$data['workproject_title'] = $this->lang->line('workproject_title');
 	$data['workproject_title1'] = $this->lang->line('workproject_title1');
 	$data['workproject_title2'] = $this->lang->line('workproject_title2');
 
          
        $this->form_validation->set_rules('name','Name','required');
-        $this->form_validation->set_rules('address','Address','required');
+        $this->form_validation->set_rules('worktime','Worktime','required');
         $this->form_validation->set_rules('content','content','required');
 
       if($this->form_validation->run() === FALSE){
         $this->load->view('templates/header', $data);
-        $this->load->view('works/create', $data);
+        $this->load->view('workproject/create', $data);
         $this->load->view('templates/footer', $data);
-      }else {
-       // Upload Image
-      $config['upload_path'] = '/var/www/Introduction/application/assets/images/works';
-      $config['allowed_types'] = 'gif|jpg|png';
-      $config['max_size'] = '2048000';
-      $config['max_width'] = '50000';
-      $config['max_height'] = '50000';
-     
-       $this->load->library('upload', $config);
-  
-     if(!$this->upload->do_upload()){
-    $errors = array('error' => $this->upload->display_errors());
-    //echo $errors['error'];
-    $post_image = 'noimage.jpg';
-    }else {
-       $data = array('upload_data' => $this->upload->data());
-       $post_image = $_FILES['userfile']['name'];
-    }
+      }else{
 
 // echo $data;
 
-      $this->works_model->create_works($post_image);
+      $this->workproject_model->create_workproject();
  
      //Set message
-     $this->session->set_flashdata('works_created','Your Works has been created');
+     $this->session->set_flashdata('workproject_created','Your workproject has been created');
 
       redirect('Home');
        }
@@ -141,13 +124,13 @@ public function create() {
 	//$data['works_title'] = $this->lang->line('works_title');
 	//$data['works_title1'] = $this->lang->line('works_title1');
 	//$data['works_title2'] = $this->lang->line('works_title2');
-	$data['workproject_titles'] = $this->workproject_model->get_workproject();
-	 $data['works_titles'] = $this->works_model->get_works();
+	$data['works_titles'] = $this->works_model->get_works();
+	 $data['workproject_titles'] = $this->workproject_model->get_workproject();
 	$data['workproject_title'] = $this->lang->line('workproject_title');
 	$data['workproject_title1'] = $this->lang->line('workproject_title1');
 	$data['workproject_title2'] = $this->lang->line('workproject_title2');
 
-   $data['post'] = $this->works_model->get_title($id);
+   $data['post'] = $this->workproject_model->get_title($id);
 
    //Check User
 
@@ -163,7 +146,7 @@ public function create() {
           }
        
       $this->load->view('templates/header', $data);
-        $this->load->view('works/edit', $data);
+        $this->load->view('workproject/edit', $data);
         $this->load->view('templates/footer', $data);
 }
 
@@ -172,8 +155,8 @@ public function create() {
      // if(!$this->session->userdata('logged_in')){
     //    redirect('users/login');
    //   }
-        $this->works_model->update_works();
- $this->session->set_flashdata('works_updated','Your work has been updated');
+        $this->workproject_model->update_workproject();
+ $this->session->set_flashdata('workproject_updated','Your workproject has been updated');
 
      redirect('Home');      
 
@@ -184,10 +167,10 @@ public function create() {
     //  if(!$this->session->userdata('logged_in')){
    //     redirect('users/login');
   //    }
- $this->works_model->delete_works($id);
+ $this->workproject_model->delete_workproject($id);
  
       //Set message
-     $this->session->set_flashdata('works_deleted','Your works has been deleted');
+     $this->session->set_flashdata('workproject_deleted','Your works has been deleted');
 
    redirect('Home');
 }

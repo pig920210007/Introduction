@@ -1,5 +1,6 @@
 <html>
         <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
                 <title><?php echo $title?></title>
                <link rel="stylesheet" href="https://bootswatch.com/superhero/bootstrap.min.css">
                <link rel="stylesheet" href="https://bootswatch.com/superhero/bootstrap.css">
@@ -53,10 +54,10 @@
          <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $workproject ?><span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#"><?php echo $workproject_title ?></a></li>
-            <li><a href="#"><?php echo $workproject_title1 ?></a></li>
-            <li><a href="#"><?php echo $workproject_title2 ?></a></li>
+          <?php foreach($workproject_titles as $workproject_title) : ?>
+            <li><a href="<?php echo site_url('/workproject/title/' . $workproject_title['id']); ?>"><?php echo $workproject_title['name']; ?></a></li>
             
+            <?php endforeach; ?>
             
           </ul>
         </li>
@@ -122,4 +123,16 @@
 
      <?php if($this->session->flashdata('works_deleted')): ?>
    <?php echo '<p class="alert alert-success">'.$this->session->flashdata('works_deleted').'</p>'; ?>
+   <?php endif; ?>
+
+    <?php if($this->session->flashdata('workproject_created')): ?>
+   <?php echo '<p class="alert alert-success">'.$this->session->flashdata('workproject_created').'</p>'; ?>
+   <?php endif; ?>
+
+    <?php if($this->session->flashdata('workproject_updated')): ?>
+   <?php echo '<p class="alert alert-success">'.$this->session->flashdata('workproject_updated').'</p>'; ?>
+   <?php endif; ?>
+
+     <?php if($this->session->flashdata('workproject_deleted')): ?>
+   <?php echo '<p class="alert alert-success">'.$this->session->flashdata('workproject_deleted').'</p>'; ?>
    <?php endif; ?>
