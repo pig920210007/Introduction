@@ -65,9 +65,10 @@ function works() {
 	$data['google_smtp'] = $this->lang->line('google_smtp');
 	$data['copy'] = $this->lang->line('copy');
 	$data['title'] = $this->lang->line('title');
-	$data['works_title'] = $this->lang->line('works_title');
-	$data['works_title1'] = $this->lang->line('works_title1');
-	$data['works_title2'] = $this->lang->line('works_title2');
+	//$data['works_title'] = $this->lang->line('works_title');
+	//$data['works_title1'] = $this->lang->line('works_title1');
+	//$data['works_title2'] = $this->lang->line('works_title2');
+	 $data['works_titles'] = $this->works_model->get_works();
 	$data['workproject_title'] = $this->lang->line('workproject_title');
 	$data['workproject_title1'] = $this->lang->line('workproject_title1');
 	$data['workproject_title2'] = $this->lang->line('workproject_title2');
@@ -98,9 +99,10 @@ function license() {
 	$data['google_smtp'] = $this->lang->line('google_smtp');
 	$data['copy'] = $this->lang->line('copy');
 	$data['title'] = $this->lang->line('title');
-	$data['works_title'] = $this->lang->line('works_title');
-	$data['works_title1'] = $this->lang->line('works_title1');
-	$data['works_title2'] = $this->lang->line('works_title2');
+	//$data['works_title'] = $this->lang->line('works_title');
+	//$data['works_title1'] = $this->lang->line('works_title1');
+	//$data['works_title2'] = $this->lang->line('works_title2');
+	 $data['works_titles'] = $this->works_model->get_works();
 	$data['workproject_title'] = $this->lang->line('workproject_title');
 	$data['workproject_title1'] = $this->lang->line('workproject_title1');
 	$data['workproject_title2'] = $this->lang->line('workproject_title2');

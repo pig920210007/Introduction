@@ -7,6 +7,7 @@
                <link rel="stylesheet" href="https://bootswatch.com/superhero/bootswatch.less">
                <link rel="stylesheet" href="https://bootswatch.com/superhero/_variables.scss">
                <link rel="stylesheet" href="https://bootswatch.com/superhero/_bootswatch.scss">
+               <link rel="stylesheet" href="http://172.20.10.6/Introduction/application/assets/css/style.css">
                <script src="http://cdn.ckeditor.com/4.7.0/standard/ckeditor.js"></script>
                
         </head>
@@ -110,3 +111,15 @@
 </nav>
 
 <div class="container">
+
+ <?php if($this->session->flashdata('works_created')): ?>
+   <?php echo '<p class="alert alert-success">'.$this->session->flashdata('works_created').'</p>'; ?>
+   <?php endif; ?>
+
+    <?php if($this->session->flashdata('works_updated')): ?>
+   <?php echo '<p class="alert alert-success">'.$this->session->flashdata('works_updated').'</p>'; ?>
+   <?php endif; ?>
+
+     <?php if($this->session->flashdata('works_deleted')): ?>
+   <?php echo '<p class="alert alert-success">'.$this->session->flashdata('works_deleted').'</p>'; ?>
+   <?php endif; ?>
