@@ -65,29 +65,29 @@
          <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $ciworks ?> <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#"><?php echo $ciworks_index ?></a></li>
-            <li><a href="#"><?php echo $ciworks_login ?></a></li>
-            <li><a href="#"><?php echo $ciworks_smtp ?></a></li>
-            <li class="divider"></li>
-            <li><a href="#"><?php echo $ciworks_permission ?></a></li>
-            <li class="divider"></li>
-            <li><a href="#"><?php echo $ciworks_sms ?></a></li>
+            <li><a href="<?php echo base_url(); ?>/ciworks/member"><?php echo $ciworks_index ?></a></li>
+            <li><a href="<?php echo base_url(); ?>/ciworks/api"><?php echo $ciworks_login ?></a></li>
+            <li><a href="<?php echo base_url(); ?>/ciworks/smtp"><?php echo $ciworks_smtp ?></a></li>
+            
+            <li><a href="<?php echo base_url(); ?>/ciworks/permission"><?php echo $ciworks_permission ?></a></li>
+            
+            <li><a href="<?php echo base_url(); ?>/ciworks/sms"><?php echo $ciworks_sms ?></a></li>
           </ul>
         </li>
 
          <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $google ?> <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#"><?php echo $google_html ?></a></li>
-            <li><a href="#"><?php echo $google_smtp ?></a></li>
+            <li><a href="<?php echo base_url(); ?>/google/html"><?php echo $google_html ?></a></li>
+            <li><a href="<?php echo base_url(); ?>/google/smtp"><?php echo $google_smtp ?></a></li>
             
           </ul>
         </li>
 
-     <li class="active"><a href="#"><?php echo $git ?> <span class="sr-only">(current)</span></a></li>
+     <li class="active"><a href="<?php echo base_url(); ?>/git/home"><?php echo $git ?> <span class="sr-only">(current)</span></a></li>
         
 
-          <li class="active"><a href="#"><?php echo $rwd ?> <span class="sr-only">(current)</span></a></li>
+          <li class="active"><a href="<?php echo base_url(); ?>/rwd/home"><?php echo $rwd ?> <span class="sr-only">(current)</span></a></li>
         
 
          
@@ -96,7 +96,7 @@
       </ul>
      
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">註冊</a></li>
+        <li><a href="<?php echo base_url(); ?>/member/register">註冊</a></li>
       </ul>
        <ul class="nav navbar-nav navbar-right">
         <li><a href="#">登入</a></li>
