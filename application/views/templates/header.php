@@ -8,7 +8,7 @@
                <link rel="stylesheet" href="https://bootswatch.com/superhero/bootswatch.less">
                <link rel="stylesheet" href="https://bootswatch.com/superhero/_variables.scss">
                <link rel="stylesheet" href="https://bootswatch.com/superhero/_bootswatch.scss">
-               <link rel="stylesheet" href="http://172.20.10.6/Introduction/application/assets/css/style.css">
+               <link rel="stylesheet" href="http://www.introduction.com/Introduction/application/assets/css/style.css">
                <script src="http://cdn.ckeditor.com/4.7.0/standard/ckeditor.js"></script>
                
         </head>
@@ -94,19 +94,25 @@
 
 
       </ul>
-     
-      <ul class="nav navbar-nav navbar-right">
+    <?php if(!$this->session->userdata('logged_in')) : ?>
+      <ul class="nav navbar-nav navbar-right">       
         <li><a href="<?php echo base_url(); ?>/member/register">註冊</a></li>
       </ul>
        <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">登入</a></li>
+        <li><a href="<?php echo base_url(); ?>/member/login">登入</a></li>
       </ul>
        <ul class="nav navbar-nav navbar-right">
         <li><a href="#">fb登入</a></li>
       </ul>
        <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">google登入</a></li>
+        <li><a href="<?php echo base_url(); ?>/User_authentication/index">google登入</a></li>
       </ul>
+      <?php endif; ?>
+        <?php if($this->session->userdata('logged_in')) : ?>
+      <ul class="nav navbar-nav navbar-right">       
+        <li><a href="<?php echo base_url(); ?>/member/loginout">登出</a></li>
+      </ul>
+        <?php endif; ?>
     </div>
   </div>
 </nav>
@@ -135,4 +141,16 @@
 
      <?php if($this->session->flashdata('workproject_deleted')): ?>
    <?php echo '<p class="alert alert-success">'.$this->session->flashdata('workproject_deleted').'</p>'; ?>
+   <?php endif; ?>
+
+   <?php if($this->session->flashdata('user_registered')): ?>
+   <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_registered').'</p>'; ?>
+   <?php endif; ?>
+
+    <?php if($this->session->flashdata('login_failed')): ?>
+   <?php echo '<p class="alert alert-danger">'.$this->session->flashdata('login_failed').'</p>'; ?>
+   <?php endif; ?>
+
+      <?php if($this->session->flashdata('user_loggedin')): ?>
+   <?php echo '<p class="alert alert-success">'.$this->session->flashdata('user_loggedin').'</p>'; ?>
    <?php endif; ?>
