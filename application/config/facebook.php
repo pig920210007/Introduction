@@ -1,0 +1,9 @@
+<?php
+$config['facebook_app_id']='118388905462429';
+$config['facebook_app_secret']='9f3a7bf07d444aa9b9a98d077adffd73';
+$config['facebook_login_type']='web';
+$config['facebook_login_redirect_url']='fb/index';
+$config['facebook_logout_redirect_url']='member/loginout';
+$config['facebook_permissions']=array('email');
+$config['facebook_graph_version']='v2.6';
+$config['facebook_auth_on_load']=TRUE;

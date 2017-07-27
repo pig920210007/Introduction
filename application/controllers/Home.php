@@ -6,6 +6,7 @@ function __construct()
  {
    parent::__construct();
   $this->lang->load('introduction', 'zh-tw');
+
  }
 
 function index() {
@@ -39,6 +40,11 @@ function index() {
 	$data['workproject_title'] = $this->lang->line('workproject_title');
 	$data['workproject_title1'] = $this->lang->line('workproject_title1');
 	$data['workproject_title2'] = $this->lang->line('workproject_title2');
+
+include_once APPPATH."libraries/google-api-client-master/google.php";
+ include_once APPPATH."libraries/Facebookapi.php";
+
+
 	$this->load->view('templates/header', $data);
     $this->load->view('home_view', $data);
    	$this->load->view('templates/footer', $data);

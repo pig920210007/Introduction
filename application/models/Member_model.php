@@ -4,6 +4,7 @@
        function __construct() {
         $this->tableName = 'member';
         $this->primaryKey = 'id';
+       $this->load->database();
     }
        public function register($enc_password){
       // User data array
@@ -66,7 +67,7 @@
         }
        }
 
-public function checkUser($data = array()){
+  public function checkUser($data = array()){
         $this->db->select($this->primaryKey);
         $this->db->from($this->tableName);
         $this->db->where(array('oauth_provider'=>$data['oauth_provider'],'oauth_uid'=>$data['oauth_uid']));
@@ -85,6 +86,5 @@ public function checkUser($data = array()){
 
         return $userID?$userID:FALSE;
     }
-
-
+ 
 }

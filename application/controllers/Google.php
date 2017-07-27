@@ -39,6 +39,7 @@ public function html() {
 	$data['workproject_title'] = $this->lang->line('workproject_title');
 	$data['workproject_title1'] = $this->lang->line('workproject_title1');
 	$data['workproject_title2'] = $this->lang->line('workproject_title2');
+	
 	$this->load->view('templates/header', $data);
     $this->load->view('google/html', $data);
    	$this->load->view('templates/footer', $data);
@@ -75,6 +76,7 @@ public function smtp() {
 	$data['workproject_title'] = $this->lang->line('workproject_title');
 	$data['workproject_title1'] = $this->lang->line('workproject_title1');
 	$data['workproject_title2'] = $this->lang->line('workproject_title2');
+	
 	$this->load->view('templates/header', $data);
     $this->load->view('google/smtp', $data);
    	$this->load->view('templates/footer', $data);

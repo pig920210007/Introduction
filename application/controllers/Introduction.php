@@ -37,6 +37,7 @@ function title() {
 	$data['workproject_title'] = $this->lang->line('workproject_title');
 	$data['workproject_title1'] = $this->lang->line('workproject_title1');
 	$data['workproject_title2'] = $this->lang->line('workproject_title2');
+	
 	$this->load->view('templates/header', $data);
     $this->load->view('introduction/title', $data);
    	$this->load->view('templates/footer', $data);
@@ -72,6 +73,7 @@ function works() {
 	$data['workproject_title'] = $this->lang->line('workproject_title');
 	$data['workproject_title1'] = $this->lang->line('workproject_title1');
 	$data['workproject_title2'] = $this->lang->line('workproject_title2');
+	
 	$this->load->view('templates/header', $data);
     $this->load->view('introduction/works', $data);
    	$this->load->view('templates/footer', $data);
@@ -106,6 +108,7 @@ function license() {
 	$data['workproject_title'] = $this->lang->line('workproject_title');
 	$data['workproject_title1'] = $this->lang->line('workproject_title1');
 	$data['workproject_title2'] = $this->lang->line('workproject_title2');
+	
 	$this->load->view('templates/header', $data);
     $this->load->view('introduction/license', $data);
    	$this->load->view('templates/footer', $data);

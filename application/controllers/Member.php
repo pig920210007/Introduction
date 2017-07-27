@@ -55,17 +55,23 @@ public function register() {
           // Encrypt password
         $enc_password = md5($this->input->post('password'));
        $this->member_model->register($enc_password);
-     
-    $this->session->set_flashdata('user_registered','You are now registered and can log in');
+$this->session->set_flashdata('user_registered','You are now registered and can log in');
+if($this->email->send())
+redirect('/member/sendmail');
+else
+echo "There is error in sending mail!";
+}
 
-
-     redirect('Home');
     }
 
-    }
-	
-
-
+public function sendmail()
+{
+$this->email->from('webbjing@gmail.com','Webb');
+$this->email->to('pig920210007@hotmail.com');
+$this->email->subject('test');
+$this->email->message('test');
+redirect('Home');
+}
 public function check_account_exists($account){
       $this->form_validation->set_message('check_account_exists','That account is taken,Please choose a different one');
        if($this->member_model->check_account_exists($account)){
@@ -129,9 +135,14 @@ public function check_account_exists($account){
 	$data['workproject_title'] = $this->lang->line('workproject_title');
 	$data['workproject_title1'] = $this->lang->line('workproject_title1');
 	$data['workproject_title2'] = $this->lang->line('workproject_title2');
+  include_once APPPATH."libraries/google-api-client-master/google.php";
+  include_once APPPATH."libraries/Facebookapi.php";
+    
+    
+
             $data['title2']='登入';
-        $this->form_validation->set_rules('account','Account','required');     
-        $this->form_validation->set_rules('password','Password','required');
+    $this->form_validation->set_rules('account','Account','required');     
+ $this->form_validation->set_rules('password','Password','required');
        
  
      if($this->form_validation->run() === FALSE){ 
@@ -183,13 +194,10 @@ $this->session->set_flashdata('login_failed','Login is invalid');
    $this->session->unset_userdata('token');
         $this->session->unset_userdata('userData');
         $this->session->sess_destroy();
-  $this->session->set_flashdata('user_loggedout','You are now logged out');
+        $this->facebook->destroy_session();
+        $this->session->set_flashdata('user_loggedout','You are now logged out');
    redirect('member/login');
 
     }
-
-
-
-
 
 }

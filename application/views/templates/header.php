@@ -11,8 +11,10 @@
                <link rel="stylesheet" href="http://www.introduction.com/Introduction/application/assets/css/style.css">
                <script src="http://cdn.ckeditor.com/4.7.0/standard/ckeditor.js"></script>
                
+               
         </head>
         <body>
+
 
              
       <nav class="navbar navbar-inverse">
@@ -101,13 +103,19 @@
        <ul class="nav navbar-nav navbar-right">
         <li><a href="<?php echo base_url(); ?>/member/login">登入</a></li>
       </ul>
+
+<!-- 
        <ul class="nav navbar-nav navbar-right">
         <li><a href="#">fb登入</a></li>
       </ul>
        <ul class="nav navbar-nav navbar-right">
-        <li><a href="<?php echo base_url(); ?>/User_authentication/index">google登入</a></li>
+             <?php  if(!empty($authUrl)) { ?>
+        <li><a href="<?php echo $authUrl ?>">google登入</a></li>
+        <?php } ?>
       </ul>
-      <?php endif; ?>
+    
+      -->
+  <?php endif; ?>
         <?php if($this->session->userdata('logged_in')) : ?>
       <ul class="nav navbar-nav navbar-right">       
         <li><a href="<?php echo base_url(); ?>/member/loginout">登出</a></li>

@@ -39,6 +39,7 @@ public function member() {
 	$data['workproject_title'] = $this->lang->line('workproject_title');
 	$data['workproject_title1'] = $this->lang->line('workproject_title1');
 	$data['workproject_title2'] = $this->lang->line('workproject_title2');
+	
 	$this->load->view('templates/header', $data);
     $this->load->view('ciworks/member', $data);
    	$this->load->view('templates/footer', $data);
@@ -75,6 +76,7 @@ public function member() {
 	$data['workproject_title'] = $this->lang->line('workproject_title');
 	$data['workproject_title1'] = $this->lang->line('workproject_title1');
 	$data['workproject_title2'] = $this->lang->line('workproject_title2');
+	
 	$this->load->view('templates/header', $data);
     $this->load->view('ciworks/api', $data);
    	$this->load->view('templates/footer', $data);
@@ -186,6 +188,7 @@ public function permission() {
 	$data['workproject_title'] = $this->lang->line('workproject_title');
 	$data['workproject_title1'] = $this->lang->line('workproject_title1');
 	$data['workproject_title2'] = $this->lang->line('workproject_title2');
+
 	$this->load->view('templates/header', $data);
     $this->load->view('ciworks/sms', $data);
    	$this->load->view('templates/footer', $data);

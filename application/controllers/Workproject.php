@@ -77,7 +77,7 @@ public function create() {
 	$data['workproject_title1'] = $this->lang->line('workproject_title1');
 	$data['workproject_title2'] = $this->lang->line('workproject_title2');
 
-         
+       
        $this->form_validation->set_rules('name','Name','required');
         $this->form_validation->set_rules('worktime','Worktime','required');
         $this->form_validation->set_rules('content','content','required');
