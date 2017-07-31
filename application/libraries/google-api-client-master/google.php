@@ -34,13 +34,17 @@
             $userData['name'] = $userProfile['given_name'] . $userProfile['family_name'];          
             $userData['email'] = $userProfile['email'];
             $userData['type'] = '2';
-            $userData['level'] = 'user';
+            $userData['level'] = '1';
            
             // Insert or update user data
             $userID = $this->member_model->checkUser($userData);
+       //     if($userId['mail'] === 1){
+        //          $this->sendmail->send($userData['email'] ,'感謝您的註冊：' . $userData['name'],'已成功註冊');
+        //    }
             if(!empty($userID)){
                 $data['userData'] = $userData;
                 $this->session->set_userdata('logged_in',$userData);
+
             } else {
                $data['userData'] = array();
             }

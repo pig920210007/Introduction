@@ -15,6 +15,7 @@
      'password' => $enc_password,
      'phone' => $this->input->post('phone'),
      'level' => $this->input->post('level'),
+     'oauth_provider' => $this->input->post('oauth_provider'),
      'type' => $this->input->post('type')
    );
 
@@ -82,9 +83,11 @@
             
             $insert = $this->db->insert($this->tableName,$data);
             $userID = $this->db->insert_id();
+          //  $mail = '1';
         }
 
         return $userID?$userID:FALSE;
+      //  return $mail;
     }
  
 }

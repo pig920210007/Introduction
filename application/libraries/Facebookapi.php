@@ -7,7 +7,7 @@ $userData['oauth_uid']=$userProfile['id'];
 $userData['name']=$userProfile['first_name'] . $userProfile['last_name'];
 $userData['email']=$userProfile['email'];
 $userData['type']='3';
-$userData['level']='user';
+$userData['level']='1';
 $userID=$this->fb_model->checkUser($userData);
 if(!empty($userID)){
 $data['userData']=$userData;

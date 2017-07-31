@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('form_validation','session','pagination','database','facebook','email');
+$autoload['libraries'] = array('form_validation','session','pagination','database','facebook','sendmail','nexmo');
 
 /*
 | -------------------------------------------------------------------
@@ -103,7 +103,7 @@ $autoload['helper'] = array('url','form','text');
 | config files.  Otherwise, leave it blank.
 |
 */
-$autoload['config'] = array('facebook','email');
+$autoload['config'] = array('facebook');
 
 /*
 | -------------------------------------------------------------------

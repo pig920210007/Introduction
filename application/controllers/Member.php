@@ -9,7 +9,8 @@ function __construct()
  }
 
 public function register() {
-	
+	$this->load->library('nexmo');
+$this->nexmo->set_format('json');  
 	$data['index'] = $this->lang->line('index');
 	$data['introduction'] = $this->lang->line('introduction');
 	$data['works'] = $this->lang->line('works');
@@ -55,23 +56,24 @@ public function register() {
           // Encrypt password
         $enc_password = md5($this->input->post('password'));
        $this->member_model->register($enc_password);
+      
 $this->session->set_flashdata('user_registered','You are now registered and can log in');
-if($this->email->send())
-redirect('/member/sendmail');
-else
-echo "There is error in sending mail!";
+        $this->sendmail->send($this->input->post('email'),'感謝您的註冊：' . $this->input->post('name'),'已成功註冊');
+        $phone=substr($this->input->post('phone'),1);
+        $from='919231874';
+        $to=$phone;
+         $message=array(
+'text'=>'感謝您的註冊',
+);
+$this->nexmo->send_message($from,$to,$message);
+       
+ redirect('Home');
+
 }
 
     }
 
-public function sendmail()
-{
-$this->email->from('webbjing@gmail.com','Webb');
-$this->email->to('pig920210007@hotmail.com');
-$this->email->subject('test');
-$this->email->message('test');
-redirect('Home');
-}
+
 public function check_account_exists($account){
       $this->form_validation->set_message('check_account_exists','That account is taken,Please choose a different one');
        if($this->member_model->check_account_exists($account)){
