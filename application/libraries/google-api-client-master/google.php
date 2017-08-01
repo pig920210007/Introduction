@@ -6,7 +6,7 @@
         // Google Project API Credentials
         $clientId = '297296851133-2ce5tgj0dss2vu97ilq0tt8pa8mktahl.apps.googleusercontent.com';
         $clientSecret = 'q5EDhKYhIv7Cbz1GS8SN0C5U';
-        $redirectUrl = 'http://www.introduction.com/Introduction/';        
+        $redirectUrl =  base_url();        
         // Google Client Configuration
         $gClient = new Google_Client();
         $gClient->setApplicationName('Login to Introduction');

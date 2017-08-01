@@ -1,4 +1,5 @@
 <h2><?php echo $works ?></h2><br>
+<?php if($this->session->userdata('level') ==2) : ?>
 <div class="list-group">
   <a href="#" class="list-group-item active">
     作品管理介面
@@ -10,6 +11,7 @@
   <a href="<?php echo base_url(); ?>/works/delete/<?php echo $post->id ?>" class="list-group-item">刪除
   </a>
 </div>
+ <?php endif; ?>
 <table class="table table-striped table-hover ">
   <thead>
     <tr>

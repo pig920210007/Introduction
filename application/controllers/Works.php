@@ -9,6 +9,9 @@ function __construct()
  }
 
 public function title($id) {
+	 if(!$this->session->userdata('logged_in')){
+        redirect('/member/login');
+      }
 	$data['index'] = $this->lang->line('index');
 	$data['introduction'] = $this->lang->line('introduction');
 	$data['works'] = $this->lang->line('works');
@@ -47,6 +50,9 @@ public function title($id) {
 
 }
 public function create() {
+	 if($this->session->userdata('level') !=2){
+        redirect('/member/login');
+      }
  $data['index'] = $this->lang->line('index');
 	$data['introduction'] = $this->lang->line('introduction');
 	$data['works'] = $this->lang->line('works');
@@ -117,6 +123,9 @@ public function create() {
      }
   
  public function edit($id){
+ 	 if($this->session->userdata('level') !=2){
+        redirect('/member/login');
+      }
         $data['index'] = $this->lang->line('index');
 	$data['introduction'] = $this->lang->line('introduction');
 	$data['works'] = $this->lang->line('works');
@@ -180,6 +189,9 @@ public function create() {
 } 
 
  public function delete($id){
+ 	 if($this->session->userdata('level') !=2){
+        redirect('/member/login');
+      }
             // Check login
     //  if(!$this->session->userdata('logged_in')){
    //     redirect('users/login');

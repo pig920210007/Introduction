@@ -157,6 +157,7 @@ public function check_account_exists($account){
      $password = md5($this->input->post('password'));
 
      $user_id = $this->member_model->login($account,$password);
+     $user_level = $this->member_model->get_level($account,$password);
 
      if($user_id){
       //Create session
@@ -164,6 +165,7 @@ public function check_account_exists($account){
       $user_data=array(
        'user_id' => $user_id,
        'account' => $account,
+       'level' => $user_level,
        'logged_in' => true
         );
 
@@ -172,7 +174,7 @@ public function check_account_exists($account){
        $this->session->set_flashdata('user_loggedin','You are now loggin');
 
 
-     redirect('Home');
+    redirect('Home');
 
      } else {
 

@@ -63,6 +63,21 @@
 
         if($result->num_rows() == 1){
           return $result->row(0)->id;
+          return $result->row(9)->level;
+        }else{
+          return false;
+        }
+       }
+
+       public function get_level($account,$password){
+
+        $this->db->where('account',$account);
+        $this->db->where('password',$password);
+
+        $result=$this->db->get('member');
+
+        if($result->num_rows() == 1){
+         return $result->row(0)->level;
         }else{
           return false;
         }

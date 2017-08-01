@@ -9,7 +9,9 @@ function __construct()
  }
 
 public function home() {
-	
+	 if(!$this->session->userdata('logged_in')){
+        redirect('/member/login');
+      }
 	$data['index'] = $this->lang->line('index');
 	$data['introduction'] = $this->lang->line('introduction');
 	$data['works'] = $this->lang->line('works');

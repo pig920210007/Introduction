@@ -8,7 +8,7 @@
                <link rel="stylesheet" href="https://bootswatch.com/superhero/bootswatch.less">
                <link rel="stylesheet" href="https://bootswatch.com/superhero/_variables.scss">
                <link rel="stylesheet" href="https://bootswatch.com/superhero/_bootswatch.scss">
-               <link rel="stylesheet" href="http://www.introduction.com/Introduction/application/assets/css/style.css">
+               <link rel="stylesheet" href="<?php echo base_url(); ?>application/assets/css/style.css">
                <script src="http://cdn.ckeditor.com/4.7.0/standard/ckeditor.js"></script>
                
                
@@ -28,7 +28,7 @@
       </button>
       <a class="navbar-brand" href="<?php echo base_url(); ?>"><?php echo $index ?></a>
     </div>
-
+ <?php if($this->session->userdata('level') ==1 or $this->session->userdata('level') ==2) : ?>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
       <ul class="nav navbar-nav">
         
@@ -96,6 +96,7 @@
 
 
       </ul>
+      <?php endif; ?>
     <?php if(!$this->session->userdata('logged_in')) : ?>
       <ul class="nav navbar-nav navbar-right">       
         <li><a href="<?php echo base_url(); ?>/member/register">註冊</a></li>

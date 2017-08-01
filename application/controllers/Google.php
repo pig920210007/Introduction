@@ -9,7 +9,9 @@ function __construct()
  }
 
 public function html() {
-	
+	 if(!$this->session->userdata('logged_in')){
+        redirect('/member/login');
+      }
 	$data['index'] = $this->lang->line('index');
 	$data['introduction'] = $this->lang->line('introduction');
 	$data['works'] = $this->lang->line('works');
@@ -46,7 +48,9 @@ public function html() {
 
 }
 public function smtp() {
-	
+	 if(!$this->session->userdata('logged_in')){
+        redirect('/member/login');
+      }
 	$data['index'] = $this->lang->line('index');
 	$data['introduction'] = $this->lang->line('introduction');
 	$data['works'] = $this->lang->line('works');

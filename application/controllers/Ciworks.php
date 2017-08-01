@@ -9,7 +9,9 @@ function __construct()
  }
 
 public function member() {
-	
+	 if(!$this->session->userdata('logged_in')){
+        redirect('/member/login');
+      }
 	$data['index'] = $this->lang->line('index');
 	$data['introduction'] = $this->lang->line('introduction');
 	$data['works'] = $this->lang->line('works');
@@ -46,7 +48,9 @@ public function member() {
 
 }
     public function api() {
-	
+	 if(!$this->session->userdata('logged_in')){
+        redirect('/member/login');
+      }
 	$data['index'] = $this->lang->line('index');
 	$data['introduction'] = $this->lang->line('introduction');
 	$data['works'] = $this->lang->line('works');
@@ -84,7 +88,9 @@ public function member() {
 }
 
 public function smtp() {
-	
+	 if(!$this->session->userdata('logged_in')){
+        redirect('/member/login');
+      }
 	$data['index'] = $this->lang->line('index');
 	$data['introduction'] = $this->lang->line('introduction');
 	$data['works'] = $this->lang->line('works');
@@ -121,7 +127,9 @@ public function smtp() {
 }
 
 public function permission() {
-	
+	 if(!$this->session->userdata('logged_in')){
+        redirect('/member/login');
+      }
 	$data['index'] = $this->lang->line('index');
 	$data['introduction'] = $this->lang->line('introduction');
 	$data['works'] = $this->lang->line('works');
@@ -158,7 +166,9 @@ public function permission() {
 }
 
    public function sms() {
-	
+	 if(!$this->session->userdata('logged_in')){
+        redirect('/member/login');
+      }
 	$data['index'] = $this->lang->line('index');
 	$data['introduction'] = $this->lang->line('introduction');
 	$data['works'] = $this->lang->line('works');
