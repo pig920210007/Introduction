@@ -59,7 +59,7 @@ $this->nexmo->set_format('json');
       
 $this->session->set_flashdata('user_registered','You are now registered and can log in');
         $this->sendmail->send($this->input->post('email'),'感謝您的註冊：' . $this->input->post('name'),'已成功註冊');
-        $phone=substr($this->input->post('phone'),1);
+        $phone='886' . substr($this->input->post('phone'),1);
         $from='919231874';
         $to=$phone;
          $message=array(

@@ -28,7 +28,7 @@
       </button>
       <a class="navbar-brand" href="<?php echo base_url(); ?>"><?php echo $index ?></a>
     </div>
- <?php if($this->session->userdata('level') ==1 or $this->session->userdata('level') ==2) : ?>
+ <?php if($this->session->userdata('level') ==1 or $this->session->userdata('level') ==2 or $this->session->userdata('logged_in'))  : ?>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
       <ul class="nav navbar-nav">
         
@@ -81,7 +81,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><?php echo $google ?> <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="<?php echo base_url(); ?>/google/html"><?php echo $google_html ?></a></li>
-            <li><a href="<?php echo base_url(); ?>/google/smtp"><?php echo $google_smtp ?></a></li>
+           <!-- <li><a href="<?php echo base_url(); ?>/google/smtp"><?php echo $google_smtp ?></a></li>-->
             
           </ul>
         </li>

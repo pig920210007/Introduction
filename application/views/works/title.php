@@ -26,7 +26,7 @@
 
     <tr>
 
-      <td><img class="works-thumb" src="http://172.20.10.6/Introduction/application/assets/images/works/<?php echo  $post->img; ?>"</img></td>
+      <td><img class="works-thumb" src="<?php echo base_url(); ?>application/assets/images/works/<?php echo  $post->img; ?>"</img></td>
       <td><?php echo $post->name; ?></td>
       <td><a href="<?php echo $post->address; ?>"><?php echo $post->address; ?></a></td>
       <td><?php echo $post->content; ?></td>
