@@ -92,7 +92,7 @@ $lang['mail_mis'] = '啟用帳號';
 $lang['logout'] = '登出系統';
 
 //腳頁
-$lang['copy'] = '© 作者:Webb & webbjing@gmail.com   - version:1.0';
+$lang['copy'] = '© 作者:Webb & webbjing@gmail.com   - version:1.2';
 
 //抬頁項目
 $lang['title'] = '自我介紹';
